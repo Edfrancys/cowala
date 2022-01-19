@@ -52,6 +52,11 @@ export const Group = styled.div`
         display: flex;
         justify-content: center;
     }
+
+    input:disabled {
+        cursor: not-allowed;
+        background-color: var(--backgroundColor);
+    }
 `;
 
 export const Row = styled.div<RowProps>`

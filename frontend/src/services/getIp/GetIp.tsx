@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
-import React from 'react';
-
-export const getIp = () => 
-    fetch('https://ip-fast.com/api/ip/?format=json').then(response => response.json());
+export const getIp = () => {
+    const apiUrl:any = process.env.REACT_APP_API_GETIP;    
+    return fetch(apiUrl)
+        .then(response => response.json());
+};

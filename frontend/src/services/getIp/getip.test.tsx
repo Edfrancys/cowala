@@ -5,8 +5,10 @@ import { getIp } from './GetIp';
 
 const response = { test: 'testing' };
 
+const UrlGetIp = process.env.REACT_APP_API_GETIP || '';
+
 const server = setupServer(
-    rest.get('https://ip-fast.com/api/ip/?format=json', (req, res, ctx:any) => {
+    rest.get(UrlGetIp, (req, res, ctx:any) => {
         return res(ctx.json(response));
     })
 );
