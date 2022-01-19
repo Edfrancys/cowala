@@ -22,7 +22,7 @@ export const Content = styled.div`
     justify-content: center;
 `;
 
-export const Form = styled.form`
+export const Form = styled.div`
     width: 541px;
 `;
 

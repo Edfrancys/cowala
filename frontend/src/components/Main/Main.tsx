@@ -1,8 +1,20 @@
-import React from 'react';
+/* eslint-disable @typescript-eslint/no-empty-function */
+import React, { useState } from 'react';
 import { Button } from '../Button/Button';
 import { Section, Content, Group, Form, Row } from './main.style';
 
+import { getIp } from '../../services/getIp';
+
 export const Main: React.FC = () => {
+
+    const [ip, setIp] = useState();
+
+    const handlerClick = async () => {
+        const ip = await getIp();
+
+        setIp(ip.ip);       
+    };
+    
     return (
         <Section>
             <Content>
@@ -27,9 +39,9 @@ export const Main: React.FC = () => {
                     <Row justifyContent='space-between' >
                         <Group className='ip'>
                             <label htmlFor='ip' >Meu IP</label>
-                            <input id='ip' type='text' name='ip'/>
+                            <input id='ip' type='text' name='ip' value={ip}/>
                         </Group>
-                        <Button className='ip' backgroundColor='var(--secondaryColor)' color='var(--textButonSecondary)' >ENCONTRAR IP</Button>
+                        <Button onClick={() => handlerClick()} className='ip' backgroundColor='var(--secondaryColor)' color='var(--textButonSecondary)' >ENCONTRAR IP</Button>
                     </Row>
 
                     <Row justifyContent='center' >
