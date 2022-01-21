@@ -54,3 +54,15 @@ test('calls api on button click and get ip', async () => {
     expect(inputIp).toBeInTheDocument;  
 
 });
+
+test('save data when click save', async () => {
+    render(<Main />);    
+    
+    const buttonSavarEl = screen.getByRole('button', {name: 'SALVAR'});  
+    expect(buttonSavarEl).toBeInTheDocument;  
+
+    fireEvent.click(buttonSavarEl);    
+    const alert = screen.findByRole('alert');
+    
+    expect(alert).toBeInTheDocument;    
+});

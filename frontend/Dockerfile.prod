@@ -4,6 +4,8 @@ RUN mkdir -p /app
 
 WORKDIR /app
 
+EXPOSE 3000
+
 COPY package*.json ./
 
 RUN npm install
@@ -12,6 +14,10 @@ RUN ls -la
 
 COPY . ./
 
-EXPOSE 3000
+RUN ls -la
 
-CMD [ "npm", "run", "start" ]
+RUN npm run build
+
+RUN npm install -g serve
+
+CMD [ "serve" ,"-s", "build"]
