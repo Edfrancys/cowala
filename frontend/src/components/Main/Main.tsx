@@ -15,7 +15,7 @@ type Inputs = {
   };
 
 export const Main: React.FC = () => {
-
+    
     const { register, handleSubmit, reset , watch, setValue, formState: { errors } } = useForm<Inputs>();    
     const ipRef = useRef(null);    
 
