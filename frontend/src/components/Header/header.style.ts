@@ -16,5 +16,15 @@ export const Container = styled.section`
         height: 63px;
         margin-left: 24px;
     }
+
+    @media (max-width: 600px){
+        & img.logo {
+            height: 81px;
+        }
+        & img.logoSencondary {
+            height: 48px;
+            margin-left: 24px;
+        }
+    }
     
 `;

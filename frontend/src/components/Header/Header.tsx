@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from './style';
+import { Container } from './header.style';
 
 import imgLogo from '../../images/logo-cowala.png';
 import imgLogoText from '../../images/cowala-software.png';

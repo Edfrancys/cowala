@@ -69,7 +69,7 @@ export const Main: React.FC = () => {
                         <input {...register('name')} value={watch('name')} id='name' type='text' name='name'/>
                     </Group>
 
-                    <Row justifyContent='space-between' >
+                    <Row className="rowInput" justifyContent='space-between' >
                         <Group>
                             <label htmlFor='profissao' >Profissão</label>
                             <input {...register('profissao')} value={watch('profissao')} id='profissao' type='text' name='profissao'/>
@@ -81,7 +81,7 @@ export const Main: React.FC = () => {
                         </Group>
                     </Row>
 
-                    <Row justifyContent='space-between' >
+                    <Row className="rowInput" justifyContent='space-between' >
                         <Group className='ip'>
                             <label htmlFor='ip' >Meu IP</label>
                             <input {...register('ip')} value={watch('ip')} ref={ipRef} id='ip' type='text' name='ip' disabled/>

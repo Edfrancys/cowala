@@ -20,17 +20,29 @@ export const Content = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: 600px){
+        width: 95vw;
+    }
+
 `;
 
 export const Form = styled.form`
     width: 541px;
+
+    @media (max-width: 600px){
+        .rowInput {
+            flex-direction: column;
+        }
+    }
 `;
 
 export const Group = styled.div`
 
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: column;    
+
     //margin-bottom: 20px;
 
     label {
@@ -67,13 +79,23 @@ export const Row = styled.div<RowProps>`
     justify-content: ${props => props.justifyContent};
 
     margin-top: 20px;
-    gap: 30px;
+    gap: 30px;    
 
     .ip {
         width: 58%;
     }
-
+    
     button.ip {
         width: 42%;
+    }
+
+    @media (max-width: 600px){
+        .ip {
+        width: 100%;
+    }
+    
+    button.ip {
+        width: 100%;
+    }
     }
 `;
