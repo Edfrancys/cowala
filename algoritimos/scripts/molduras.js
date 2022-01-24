@@ -1,4 +1,12 @@
-const moldura = document.getElementById('resultado')
+const molduraEl = document.getElementById('resultado')
+
+function handleSubmitMoldura() {
+    const collum = document.getElementById('collum').value;
+    const line = document.getElementById('line').value;
+
+    molduraEl.innerHTML = '';
+    molduras(collum, line);
+}
 
 function molduras(collum, line) {
     const loopCollum = collum - 1;
@@ -19,19 +27,19 @@ function molduras(collum, line) {
       
     for (let index = 0; index <= loopLine; index++) {
         if ( index === 0 || index === loopLine) {
-            htmlTemp = moldura.innerHTML;
+            htmlTemp = molduraEl.innerHTML;
             htmlAdd = '<span class="linemoldura">' + collumArr.toString().replaceAll(',', ' ') + '</span>';            
             
-            moldura.innerHTML = htmlTemp + htmlAdd;
+            molduraEl.innerHTML = htmlTemp + htmlAdd;
 
         } else{
-            htmlTemp = moldura.innerHTML;
+            htmlTemp = molduraEl.innerHTML;
             htmlAdd = '<span class="linemoldura">' + collumIntermedioArr.toString().replaceAll(',', ' ') + '</span>';    
             
-            moldura.innerHTML = htmlTemp + htmlAdd;
+            molduraEl.innerHTML = htmlTemp + htmlAdd;
         } 
     }    
 
 }
 
-molduras(6,4);
+//molduras(3,4);

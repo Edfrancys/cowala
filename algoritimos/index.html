@@ -8,15 +8,107 @@
     <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-    <div id="Fibonaci">
-        <input type="number" id="fibonaci" value="0" onchange="sequenciaFibonaci(this.value)" >
-        <div id="sequenciaFibonaci"></div>
-    </div>
+    <div class="container">
+        <section class="fibonaci">
+            <header>
+                <h2>Fibonaci</h2>
+                <p>Coloque o numero qualquer maior que 0 e receba a sequencia de fibonaci</p>
+            </header>
+            <main>
+                <div class='form'>
+                    <input type="number" id="fibonaci" value="0" onchange="sequenciaFibonaci(this.value)" >    
+                </div>
+                <div id="sequenciaFibonaci"></div>
+            </main>            
+        </section>
+        <section>
+            <header>
+                <h2>Classificador</h2>
+                <p>Ordenação de Array de Objetos:</p>
+                <p>
+                    <code>
+                    [ { souEu: false, responsavel: true, nome: 'Francisco Azevedo' },
+                        { souEu: false, responsavel: false, nome: 'João Paulo' },
+                        { souEu: true, responsavel: true, nome: 'Edfrancys Azevedo' },
+                        { souEu: false, responsavel: false, nome: 'Ewerton Silva' },
+                        { souEu: false, responsavel: true, nome: 'João Pedro' },
+                        { souEu: false, responsavel: false, nome: 'Alberto Pedro' } ]
+                    </code>
+                </p>
+            </header>
+            <main>
+                <!-- <input type="number" id="fibonaci" value="0" > -->
+                <div id='classificador'></div>
+            </main>               
+        </section>
+        <section>
+            <header>
+                <h2>Faxina</h2>
+                <p>Escluir propriedades sem valor do objeto</p>
+                <p>
+                    <code>
+                        {"fizz": "buzz", "foo": null, "bar": 42}
+                    </code>
+                </p>
+            </header>
+            <main>
+                <div id='faxina'></div>
+            </main>
+        </section>
+        <section>
+            <header>
+                <h2>Validade</h2>
+                <p>Validação de datas</p>
+                <p>
+                    <code>
+                        #Formato data
+                        '2021-11-17T20:40:09.503Z'
+                        
+                        #Espiração em dias
+                        '10d'
+                    </code>
+                </p>
+            </header>
+            <main>
+                
+                <div class='form'>
+                    <input type="text" id="data" placeholder="2021-11-17T20:40:09.503Z" >
+                    <input type="text" id="dias" placeholder="10d" >
+                    <button onclick="handleSubmitValidade()">Validar</button>
+                </div>
+                
+                <div id='validade'></div>
+            </main>
+        </section>
 
-    <div id='classificador'></div>
-
-    <div id='molduras'>
-        <pre id='resultado'></pre>        
+        <section>
+            <header>
+                <h2>Moldura</h2>
+                <p>Moldura de acordo com coluna e linha recebido.</p>
+                <p>
+                    <pre>
+                        (3,4)                        
+                        + - +
+                        -   -
+                        -   -
+                        + - +
+                    </pre>
+                </p>
+            </header>
+            <main>
+                
+                <div class='form'>
+                    <input type="number" id="collum" placeholder="numero" >
+                    <input type="number" id="line" placeholder="numero" >
+                    <button onclick="handleSubmitMoldura()">Moldura</button>
+                </div>
+                
+                <div id='validade'>
+                    <pre id='resultado'></pre> 
+                </div>
+            </main>
+        </section>
+        
     </div>
     
     <script src="./scripts/fibonaci.js"></script>

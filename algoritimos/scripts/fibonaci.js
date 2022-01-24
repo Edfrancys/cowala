@@ -23,6 +23,6 @@ function sequenciaFibonaci (value) {
         arr[index] = valor;               
     }
     
-    fibonanciEl.innerHTML = '[' + arr + ']';    
+    fibonanciEl.innerHTML = '<p>[' + arr.toString().replaceAll(',' , ', ') + ']</p>';    
     
 }

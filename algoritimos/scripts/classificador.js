@@ -1,9 +1,6 @@
+const classificadorEl = document.getElementById('classificador')
+
 const arr = [
-    {
-        souEu: true,
-        responsavel: true,
-        nome: 'Edfrancys Azevedo'
-    },
     {
         souEu: false,
         responsavel: true,
@@ -13,6 +10,11 @@ const arr = [
         souEu: false,
         responsavel: false,
         nome: 'João Paulo'
+    },
+    {
+        souEu: true,
+        responsavel: true,
+        nome: 'Edfrancys Azevedo'
     },
     {
         souEu: false,
@@ -41,7 +43,14 @@ function classificador (arr) {
         if(a.nome < b.nome) return -1;
         return 0;
     });
-    console.log(ord)
+
+    ord.forEach((element, index) => {
+        htmlTemp = classificadorEl.innerHTML;
+        htmlAdd = `<p class="order"> #id:${index + 1} - Nome: ${element.nome}<br/> - Sou eu: ${element.souEu} - Responsável: ${element.responsavel} </p>`; 
+            
+        classificadorEl.innerHTML = htmlTemp + htmlAdd;
+    })
+   
 }
 
 classificador(arr);

@@ -1,3 +1,5 @@
+const faxinaEl = document.getElementById('faxina');
+
 const obj = {"fizz": "buzz", "foo": null, "bar": 42};
 
 function faxina (obj) {
@@ -6,11 +8,15 @@ function faxina (obj) {
             delete obj[prop]
         }
     }
+
+    for (var prop in obj) {
+        htmlTemp = faxinaEl.innerHTML;
+        htmlAdd = `<p class="order">${prop}: ${obj[prop]}</p>`; 
+            
+        faxinaEl.innerHTML = htmlTemp + htmlAdd;
+    }    
+
     return obj;
 }
 
-console.log(obj);
-
 faxina(obj)
-
-console.log(obj);
